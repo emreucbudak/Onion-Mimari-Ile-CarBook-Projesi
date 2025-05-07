@@ -1,0 +1,6 @@
+@MyUdemyProject.BookAPI_HostAddress = http://localhost:5181
+
+GET {{MyUdemyProject.BookAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
