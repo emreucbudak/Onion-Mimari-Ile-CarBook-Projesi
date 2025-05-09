@@ -26,7 +26,7 @@ namespace MyUdemyProject.Application.Features.CQRS.Handler.AboutHandlers
                 ImageUrl = x.ImageUrl,
                 Title = x.Title,
                 Description = x.Description,
-            });
+            }).ToList();
 
         }
     }

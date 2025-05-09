@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyUdemyProject.Domain", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D05997ED-5069-4520-8B93-A1239F700147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUdemyProject.Persistence", "Infrastructure\MyUdemyProject.Persistence\MyUdemyProject.Persistence.csproj", "{A67E4F24-AF1C-4726-954C-0A8455289173}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyUdemyProject.Persistence", "Infrastructure\MyUdemyProject.Persistence\MyUdemyProject.Persistence.csproj", "{A67E4F24-AF1C-4726-954C-0A8455289173}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{19BD98F5-033E-485E-BF5E-EEFEBB2940EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUdemyProject.BookAPI", "Presentation\MyUdemyProject.BookAPI\MyUdemyProject.BookAPI.csproj", "{A279FCF4-5F75-4519-915E-7B341AEF8049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyUdemyProject.BookAPI", "Presentation\MyUdemyProject.BookAPI\MyUdemyProject.BookAPI.csproj", "{A279FCF4-5F75-4519-915E-7B341AEF8049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUdemyProject.Application", "Core\MyUdemyProject.Application\MyUdemyProject.Application.csproj", "{19DFAD94-BF67-4C39-AECE-2E324D361FDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A279FCF4-5F75-4519-915E-7B341AEF8049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A279FCF4-5F75-4519-915E-7B341AEF8049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A279FCF4-5F75-4519-915E-7B341AEF8049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19DFAD94-BF67-4C39-AECE-2E324D361FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DFAD94-BF67-4C39-AECE-2E324D361FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DFAD94-BF67-4C39-AECE-2E324D361FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DFAD94-BF67-4C39-AECE-2E324D361FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{9E6D2DFA-5684-4755-BA62-3C8B925285D0} = {8BAAE150-748A-437C-B1E7-98D22CC1F0A7}
 		{A67E4F24-AF1C-4726-954C-0A8455289173} = {D05997ED-5069-4520-8B93-A1239F700147}
 		{A279FCF4-5F75-4519-915E-7B341AEF8049} = {19BD98F5-033E-485E-BF5E-EEFEBB2940EE}
+		{19DFAD94-BF67-4C39-AECE-2E324D361FDA} = {8BAAE150-748A-437C-B1E7-98D22CC1F0A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF0AFE80-69D7-4CEF-86B0-2D652CA8C27A}

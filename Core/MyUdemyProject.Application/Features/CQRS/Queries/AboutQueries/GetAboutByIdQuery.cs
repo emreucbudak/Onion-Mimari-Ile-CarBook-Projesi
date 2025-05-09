@@ -14,5 +14,6 @@ namespace MyUdemyProject.Application.Features.CQRS.Queries.AboutQueries
         {
             Id = id;
         }
+
     }
 }

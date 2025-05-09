@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Core\MyUdemyProject.Application\MyUdemyProject.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MyUdemyProject.Persistence\MyUdemyProject.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

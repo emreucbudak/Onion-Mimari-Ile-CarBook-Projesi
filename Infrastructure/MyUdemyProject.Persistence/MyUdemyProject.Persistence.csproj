@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\MyUdemyProject.Application\MyUdemyProject.Application.csproj" />
     <ProjectReference Include="..\..\Core\MyUdemyProject.Domain\MyUdemyProject.Domain.csproj" />
   </ItemGroup>
 
