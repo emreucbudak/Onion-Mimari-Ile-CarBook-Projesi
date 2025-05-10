@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyUdemyProject.Application.Features.CQRS.Command.AboutCommands;
 using MyUdemyProject.Application.Features.CQRS.Handler.AboutHandlers;
 using MyUdemyProject.Application.Features.CQRS.Result.AboutResults;
 
@@ -28,6 +29,29 @@ namespace MyUdemyProject.BookAPI.Controllers
         {
             var x =  await gtl.Handle(false);
             return Ok(x);
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAboutsById (int id) {
+            var x = await getAboutByIdQueryHandler.HandlerById(id);
+            return Ok(x);
+        }
+        [HttpDelete]
+        public async Task<IActionResult> RemoveAbouts (RemoveAboutCommand rm)
+        {
+            await removeAboutQueryHandler.Handle(rm);
+            return Ok();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddAbouts (CreateAboutCommand cm)
+        {
+            await addAboutQueryHandler.Handle(cm);
+            return Ok();
+        }
+        [HttpPut]
+        public async Task<IActionResult> UpdateAbouts (UpdateAboutCommands cm)
+        {
+            await updateAboutQueryHandler.UpdateAboutHandler(cm);
+            return Ok();
         }
     }
 }
