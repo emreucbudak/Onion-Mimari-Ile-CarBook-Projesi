@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyUdemyProject.Application.Features.CQRS.Command.AboutCommands;
 using MyUdemyProject.Application.Features.CQRS.Handler.AboutHandlers;
+using MyUdemyProject.Application.Features.CQRS.Queries.AboutQueries;
 using MyUdemyProject.Application.Features.CQRS.Result.AboutResults;
 
 namespace MyUdemyProject.BookAPI.Controllers
@@ -31,8 +32,8 @@ namespace MyUdemyProject.BookAPI.Controllers
             return Ok(x);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAboutsById (int id) {
-            var x = await getAboutByIdQueryHandler.HandlerById(id);
+        public async Task<IActionResult> GetAboutsById (GetAboutByIdQuery gq) {
+            var x = await getAboutByIdQueryHandler.HandlerById(gq);
             return Ok(x);
         }
         [HttpDelete]

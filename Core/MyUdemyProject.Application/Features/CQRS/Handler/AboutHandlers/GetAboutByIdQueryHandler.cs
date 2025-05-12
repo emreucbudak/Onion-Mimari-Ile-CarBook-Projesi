@@ -1,4 +1,5 @@
-﻿using MyUdemyProject.Application.Features.CQRS.Result.AboutResults;
+﻿using MyUdemyProject.Application.Features.CQRS.Queries.AboutQueries;
+using MyUdemyProject.Application.Features.CQRS.Result.AboutResults;
 using MyUdemyProject.Application.Interfaces;
 using MyUdemyProject.Domain.Entities;
 using System;
@@ -17,9 +18,9 @@ namespace MyUdemyProject.Application.Features.CQRS.Handler.AboutHandlers
         {
             _rp = rp;
         }
-        public async  Task<GetAboutByIdQueryResult> HandlerById (int id)
+        public async  Task<GetAboutByIdQueryResult> HandlerById (GetAboutByIdQuery inf)
         {
-            var x = await _rp.GetItemAsync(b => b.AboutId == id);
+            var x = await _rp.GetItemAsync(b => b.AboutId == inf.Id);
             return new GetAboutByIdQueryResult()
             {
                 AboutId = x.AboutId,
