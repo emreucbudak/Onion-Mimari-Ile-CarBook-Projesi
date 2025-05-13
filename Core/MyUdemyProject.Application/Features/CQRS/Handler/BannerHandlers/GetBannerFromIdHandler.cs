@@ -1,4 +1,5 @@
 ﻿using MyUdemyProject.Application.Features.CQRS.Queries.BannerQueries;
+using MyUdemyProject.Application.Features.CQRS.Result.BannerResults;
 using MyUdemyProject.Application.Interfaces;
 using MyUdemyProject.Domain.Entities;
 using System;
@@ -17,10 +18,17 @@ namespace MyUdemyProject.Application.Features.CQRS.Handler.BannerHandlers
         {
             _bannerRepository = bannerRepository;
         }
-        public async Task<Banner> GetBannerFromIdHandle(BannerQueriesForId qr)
+        public async Task<GetBannerWithIdResults> GetBannerFromIdHandle(BannerQueriesForId qr)
         {
             var x = await _bannerRepository.GetItemAsync(b => b.BannerId == qr.Id);
-            return x;
+            return new GetBannerWithIdResults()
+            {
+                BannerId = x.BannerId,
+                Description = x.Description,
+                VideoDescription = x.VideoDescription,
+                Title = x.Title,
+                VideoUrl = x.VideoUrl,
+            };
         }
     }
 }

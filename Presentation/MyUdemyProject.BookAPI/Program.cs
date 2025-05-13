@@ -12,6 +12,7 @@ builder.Services.AddDbContext();
 builder.Services.AddAboutCqrs();
 builder.Services.AddRepository();
 builder.Services.AddBannerCqrs();
+builder.Services.AddBrandCqrs();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

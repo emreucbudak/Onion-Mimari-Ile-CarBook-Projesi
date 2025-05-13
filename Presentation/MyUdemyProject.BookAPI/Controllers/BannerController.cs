@@ -32,9 +32,10 @@ namespace MyUdemyProject.BookAPI.Controllers
             return Ok(x);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBannerForId(BannerQueriesForId bannerQueriesForId)
+        public async Task<IActionResult> GetBannerForId(int id)
         {
-            var x = await gtb.GetBannerFromIdHandle(bannerQueriesForId);
+            BannerQueriesForId bqf = new BannerQueriesForId() { Id = id};
+            var x = await gtb.GetBannerFromIdHandle(bqf);
             return Ok(x);
         }
         [HttpPost]

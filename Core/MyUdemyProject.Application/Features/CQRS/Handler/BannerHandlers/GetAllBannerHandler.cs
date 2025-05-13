@@ -1,4 +1,5 @@
-﻿using MyUdemyProject.Application.Interfaces;
+﻿using MyUdemyProject.Application.Features.CQRS.Result.BannerResults;
+using MyUdemyProject.Application.Interfaces;
 using MyUdemyProject.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,17 @@ namespace MyUdemyProject.Application.Features.CQRS.Handler.BannerHandlers
         {
             _rp = rp;
         }
-        public Task<IEnumerable<Banner>> GetBannerHandle() {
-            var x = _rp.GetAllAsync(false);
-            return x;
+        public async Task<IEnumerable<GetBannerResults>> GetBannerHandle() {
+            var x = await  _rp.GetAllAsync(false);
+            return x.Select(x => new GetBannerResults()
+            {
+                BannerId = x.BannerId,
+                Description = x.Description,
+                VideoDescription = x.VideoDescription,
+                Title = x.Title,
+                VideoUrl = x.VideoUrl,
+            });
+            
         }
     }
 }

@@ -20,6 +20,11 @@ namespace MyUdemyProject.Application.Features.CQRS.Handler.BannerHandlers
         }
         public async Task HandleBanner(UpdateBannerCommand command) {
             var x = await _repository.GetItemAsync(b=> b.BannerId == command.BannerId);
+            x.VideoUrl = command.VideoUrl;
+            x.VideoDescription = command.VideoDescription;
+            x.Title = command.Title;
+            x.Description = command.Description;
+            
             await _repository.UpdateItemAsync(x);
         }
     }

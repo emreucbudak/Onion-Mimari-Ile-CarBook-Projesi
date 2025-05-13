@@ -32,8 +32,9 @@ namespace MyUdemyProject.BookAPI.Controllers
             return Ok(x);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAboutsById (GetAboutByIdQuery gq) {
-            var x = await getAboutByIdQueryHandler.HandlerById(gq);
+        public async Task<IActionResult> GetAboutsById (int id) {
+            GetAboutByIdQuery gabq = new GetAboutByIdQuery(id);
+            var x = await getAboutByIdQueryHandler.HandlerById(gabq);
             return Ok(x);
         }
         [HttpDelete]

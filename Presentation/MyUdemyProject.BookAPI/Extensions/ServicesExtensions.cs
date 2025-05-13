@@ -1,5 +1,6 @@
 ﻿using MyUdemyProject.Application.Features.CQRS.Handler.AboutHandlers;
 using MyUdemyProject.Application.Features.CQRS.Handler.BannerHandlers;
+using MyUdemyProject.Application.Features.CQRS.Handler.BrandHandlers;
 using MyUdemyProject.Application.Interfaces;
 using MyUdemyProject.Persistence.ApplicationDbContext;
 using MyUdemyProject.Persistence.Data;
@@ -30,6 +31,13 @@ namespace MyUdemyProject.BookAPI.Extensions
             services.AddScoped<CreateBannerHandler>();
             services.AddScoped<UpdateBannerHandler>();
             services.AddScoped<RemoveBannerHandler>();
+        }
+        public static void AddBrandCqrs(this IServiceCollection services) {
+            services.AddScoped<AddBrandHandler>();
+            services.AddScoped<GetAllBrandHandlers>();
+            services.AddScoped<GetBrandWithIdHandler>();
+            services.AddScoped<RemoveBrandHandlers>();
+            services.AddScoped<UpdateBrandHandler>();
         }
     }
 }
