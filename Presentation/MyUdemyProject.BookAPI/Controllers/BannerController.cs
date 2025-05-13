@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyUdemyProject.Application.Features.CQRS.Command.BannerCommands;
 using MyUdemyProject.Application.Features.CQRS.Handler.BannerHandlers;
+using MyUdemyProject.Application.Features.CQRS.Queries.BannerQueries;
 
 namespace MyUdemyProject.BookAPI.Controllers
 {
@@ -28,6 +30,30 @@ namespace MyUdemyProject.BookAPI.Controllers
         {
             var x = await gtl.GetBannerHandle();
             return Ok(x);
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBannerForId(BannerQueriesForId bannerQueriesForId)
+        {
+            var x = await gtb.GetBannerFromIdHandle(bannerQueriesForId);
+            return Ok(x);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddBanner (CreateBannerCommand cm)
+        {
+            await crt.AddBannerHandler(cm);
+            return Ok();
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteBanner (RemoveBannerCommand cm)
+        {
+            await rmv.RemoveHandler(cm);
+            return Ok();
+        }
+        [HttpPut] 
+        public async Task<IActionResult> UpdateBanner (UpdateBannerCommand cm)
+        {
+            await updt.HandleBanner(cm);
+            return Ok();
         }
     }
 }
